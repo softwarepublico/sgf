@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j">
+    <style type="text/css">
+    <!--
+    .fieldLabel {
+        display: block;
+        width: 50px;
+        float: left;
+        line-height: 20px;
+    }
+    
+    .fieldValue {
+        width: 250px;
+    }
+    -->
+    </style>
+	<rich:modalPanel id="acompanhamentoAbastecimento" autosized="true" top="10" domElementAttachment="form">
+		<div id="cadastro">
+			<a4j:outputPanel id="panelPostos">
+				<h1> <h:outputText value="#{msg['abastecimento.acompanhamento']}" /> </h1>
+				<fieldset>
+					<legend><h:outputText value="#{msg['abastecimento.dado.veiculo']}" /></legend>
+					<h:outputLabel styleClass="fieldLabel" value="#{msg['abastecimento.veiculo.modelo']}" for="modeloAbast" />
+					<h:inputText styleClass="fieldValue" value="#{abastecimentoBean.entity.veiculo.modelo.descricao}" id="modeloAbast" size="40" readonly="true"/>
+					<br />
+					<h:outputLabel styleClass="fieldLabel" value="#{msg['abastecimento.veiculo.placa']}" for="placa" />
+                    <h:inputText styleClass="fieldValue" value="#{abastecimentoBean.entity.veiculo.placa}" id="placa" size="40" readonly="true"/>
+				</fieldset>
+				<fieldset>
+					<legend><h:outputText value="#{msg['abastecimento.dado.motorista']}" /></legend>
+					<h:outputLabel styleClass="fieldLabel" value="#{msg['abastecimento.motorista']}" for="motorista" />
+                    <h:inputText id="motorista" styleClass="fieldValue" value="#{abastecimentoBean.entity.motorista.pessoa.nome}" readonly="true" />
+                    <br/>
+                    <h:outputLabel styleClass="fieldLabel" value="#{msg['abastecimento.motorista.cnh']}" for="cnh" />
+                    <h:inputText id="cnh" styleClass="fieldValue" value="#{abastecimentoBean.entity.motorista.cnh}" 
+                    				readonly="true" alt="Carteira de Habilitação" title="Carteira de Habilitação" />
+                    <br/>
+                    <h:outputLabel styleClass="fieldLabel" value="#{msg['abastecimento.motorista.categoria']}" for="categoria" />
+                    <h:inputText id="categoria" styleClass="fieldValue" value="#{abastecimentoBean.entity.motorista.categoria}" 
+                    				readonly="true" alt="Categoria CNH" title="Categoria CNH" />
+				</fieldset>
+				<fieldset>
+					<legend><h:outputText value="#{msg['abastecimento.dado.autorizador']}" /></legend>
+					<h:outputLabel for="autorizador" value="#{msg['abastecimento.autorizador']}" styleClass="fieldLabel" />
+					<h:inputText value="#{abastecimentoBean.entity.autorizador.pessoa.nome}" styleClass="fieldValue" 
+									readonly="true" id="autorizador" alt="Autorizador do abastecimento" 
+									title="Autorizador do abastecimento" />
+					<br />
+					<h:outputLabel for="ugAutorizador" value="#{msg['abastecimento.autorizador.ua.ug']}" styleClass="fieldLabel" />
+					<h:inputText value="#{abastecimentoBean.entity.autorizador.pessoa.ua.ug.descricao}" styleClass="fieldValue" 
+									readonly="true" id="ugAutorizador" alt="UG do Autorizador" 
+									title="UG do Autorizador" />
+					<br />
+					<h:outputLabel for="uaAutorizador" value="#{msg['abastecimento.autorizador.ua']}" styleClass="fieldLabel" />
+					<h:inputText value="#{abastecimentoBean.entity.autorizador.pessoa.ua.descricao}" styleClass="fieldValue" 
+									readonly="true" id="uaAutorizador" alt="UA do Autorizador" 
+									title="UA do Autorizador" />
+				</fieldset>
+				<fieldset>
+					<legend><h:outputText value="#{msg['abastecimento.dado.posto']}" /></legend>
+					<h:outputLabel styleClass="fieldLabel" value="#{msg['abastecimento.posto']}" for="posto" />
+                    <h:inputText id="posto" value="#{abastecimentoBean.entity.posto.descricao}" styleClass="fieldValue" readonly="true" />
+				</fieldset>
+				<fieldset>
+					<legend><h:outputText value="#{msg['abastecimento.situacao']}" /></legend>
+					<h:outputText value="#{abastecimentoBean.entity.status}" id="status" styleClass="labelNegrito"/>
+				</fieldset>
+				<fieldset>
+					<legend><h:outputText value="#{msg['label.justificativa']}" /></legend>
+					<h:outputText value="#{abastecimentoBean.entity.justificativa}" id="justificativa" styleClass="labelNegrito"/>
+				</fieldset>
+			</a4j:outputPanel>
+		</div>
+		<a4j:commandButton value="Voltar" 
+			onclick="Richfaces.hideModalPanel('acompanhamentoAbastecimento');"/>
+	</rich:modalPanel>
+</ui:composition>
+

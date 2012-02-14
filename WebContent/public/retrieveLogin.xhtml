@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jstl/core">
+
+<head>
+	<title>SGF - Sistema de Gestão de Frotas</title>
+	<a4j:loadStyle src="css/estilo.css" />
+</head>
+	
+<body>
+
+	<div id="main">
+
+		<h:panelGrid>
+			<h2>Recuperação de login/senha!</h2>
+		</h:panelGrid>
+	
+		<h:panelGrid>
+		
+			<div>
+			    <p style="font-size:13pt">
+			    	Digite seu <strong>e-mail</strong> para receber usuário e senha.<br />
+					Caso não tenha e-mail, entre em contato com Portal Inspiração.<br />
+					<h2><strong>(85) 3321-3435</strong></h2>
+				</p>
+			</div>
+			
+			<h:outputLabel value="E-mail"/>
+			<h:inputText id="userMail" value="#{controlBean.userMail}" size="60" />
+			
+			<h:commandButton value="Enviar" action="#{controlBean.enviarEmail}" styleClass="button">
+				<h:graphicImage alt="Enviar" url="../images/portal/botoes/bt_enviar.gif" />
+			</h:commandButton>
+			<a href="../" class="link"><img src="../images/portal/botoes/bt_voltar.gif" alt="" /></a>
+		
+			<c:if test="${!empty sendmail_msg}">
+				<h:outputLabel value="#{sendmail_msg}" style="color:red"/>
+			</c:if>
+			<c:if test="${!empty sendmail_wrn}">
+				<h:outputLabel value="#{sendmail_wrn}" style="color:red"/>
+			</c:if>
+			<c:if test="${!empty sendmail_err}">
+				<h:outputLabel value="#{sendmail_err}" style="color:red"/>
+			</c:if>
+		
+		</h:panelGrid>
+		
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,2 @@
+01:49:20,747 WARN  [http-8080-5] util.JDBCExceptionReporter (JDBCExceptionReporter.java:100) - SQL Error: 0, SQLState: 42703
+01:49:20,761 ERROR [http-8080-5] util.JDBCExceptionReporter (JDBCExceptionReporter.java:101) - ERRO: coluna pessoa0_.ativo não existe

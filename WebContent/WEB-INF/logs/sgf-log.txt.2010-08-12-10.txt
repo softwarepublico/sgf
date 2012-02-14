@@ -1,0 +1,122 @@
+10:03:35,776 WARN  [main] cfg.HSConfiguration (HSConfiguration.java:169) - No configuration file hibernate-spatial.cfg.xml on the classpath.
+10:04:10,817 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@fffde5d4: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 31A47A739F10C28D19054CB9ADDFA575
+10:04:10,821 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event InteractiveAuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@fffde5d4: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 31A47A739F10C28D19054CB9ADDFA575
+10:04:24,935 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationFailureConcurrentLoginEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@fffe3f86: RemoteIpAddress: 127.0.0.1; SessionId: E6CC346C91869FD55E95A65EB329ABA3; exception: Maximum sessions of {0} for this principal exceeded
+10:04:46,367 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationFailureBadCredentialsEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@fffe3f86: RemoteIpAddress: 127.0.0.1; SessionId: E6CC346C91869FD55E95A65EB329ABA3; exception: Bad credentials
+10:05:44,240 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationFailureConcurrentLoginEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@2cd90: RemoteIpAddress: 172.30.116.73; SessionId: 64A8E00E0B291ECA5DDE7DE5C6374806; exception: Maximum sessions of {0} for this principal exceeded
+10:05:55,810 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationFailureBadCredentialsEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@2cd90: RemoteIpAddress: 172.30.116.73; SessionId: 64A8E00E0B291ECA5DDE7DE5C6374806; exception: Bad credentials
+10:06:05,875 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationSuccessEvent: deivid; details: org.springframework.security.ui.WebAuthenticationDetails@2cd90: RemoteIpAddress: 172.30.116.73; SessionId: 64A8E00E0B291ECA5DDE7DE5C6374806
+10:06:05,876 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event InteractiveAuthenticationSuccessEvent: deivid; details: org.springframework.security.ui.WebAuthenticationDetails@2cd90: RemoteIpAddress: 172.30.116.73; SessionId: 64A8E00E0B291ECA5DDE7DE5C6374806
+10:12:45,657 WARN  [main] cfg.HSConfiguration (HSConfiguration.java:169) - No configuration file hibernate-spatial.cfg.xml on the classpath.
+10:13:18,258 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@380f4: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: E0074459EEC5F0E023FC53E6C6EE42BA
+10:13:18,259 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event InteractiveAuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@380f4: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: E0074459EEC5F0E023FC53E6C6EE42BA
+10:13:37,304 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationFailureBadCredentialsEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: A6DAA33C493D899EF6E9F7C40D584300; exception: Bad credentials
+10:24:10,941 WARN  [main] cfg.HSConfiguration (HSConfiguration.java:169) - No configuration file hibernate-spatial.cfg.xml on the classpath.
+10:24:15,879 ERROR [main] context.ContextLoader (ContextLoader.java:215) - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name '_filterChainProxy': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '_filterChainList': Cannot resolve reference to bean '_exceptionTranslationFilter' while setting bean property 'filters' with key [2]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '_exceptionTranslationFilter': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationProcessingFilterEntryPoint' defined in ServletContext resource [/WEB-INF/spring.xml]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: loginFormUrl must be specified
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:478)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:429)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:729)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:381)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:255)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:199)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:45)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:3934)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4429)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:791)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:771)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:526)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:630)
+	at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:556)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:491)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1206)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:314)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:722)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:443)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:516)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:583)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:413)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '_filterChainList': Cannot resolve reference to bean '_exceptionTranslationFilter' while setting bean property 'filters' with key [2]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '_exceptionTranslationFilter': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationProcessingFilterEntryPoint' defined in ServletContext resource [/WEB-INF/spring.xml]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: loginFormUrl must be specified
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:275)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:104)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:287)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:126)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1244)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1008)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:470)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.security.config.FilterChainProxyPostProcessor.postProcessBeforeInitialization(FilterChainProxyPostProcessor.java:52)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:471)
+	... 38 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '_exceptionTranslationFilter': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationProcessingFilterEntryPoint' defined in ServletContext resource [/WEB-INF/spring.xml]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: loginFormUrl must be specified
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:478)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:269)
+	... 56 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authenticationProcessingFilterEntryPoint' defined in ServletContext resource [/WEB-INF/spring.xml]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: loginFormUrl must be specified
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:471)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.security.config.EntryPointInjectionBeanPostProcessor.postProcessBeforeInitialization(EntryPointInjectionBeanPostProcessor.java:37)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:471)
+	... 65 more
+Caused by: java.lang.IllegalArgumentException: loginFormUrl must be specified
+	at org.springframework.util.Assert.hasLength(Assert.java:136)
+	at org.springframework.security.ui.webapp.AuthenticationProcessingFilterEntryPoint.afterPropertiesSet(AuthenticationProcessingFilterEntryPoint.java:84)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1333)
+	... 78 more
+10:26:05,071 WARN  [ContainerBackgroundProcessor[StandardEngine[Catalina]]] cfg.HSConfiguration (HSConfiguration.java:169) - No configuration file hibernate-spatial.cfg.xml on the classpath.
+10:26:17,158 WARN  [main] cfg.HSConfiguration (HSConfiguration.java:169) - No configuration file hibernate-spatial.cfg.xml on the classpath.
+10:26:49,214 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@fffde5d4: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 716B398225CFFFDDD6DB4E3C71A0713A
+10:26:49,215 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event InteractiveAuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@fffde5d4: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 716B398225CFFFDDD6DB4E3C71A0713A
+10:27:09,009 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationFailureBadCredentialsEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@1c07a: RemoteIpAddress: 127.0.0.1; SessionId: 556C53DB42CCFD5E29C74D270779A4B4; exception: Bad credentials
+10:48:04,556 WARN  [main] cfg.HSConfiguration (HSConfiguration.java:169) - No configuration file hibernate-spatial.cfg.xml on the classpath.
+10:48:28,899 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: EEB421DB101B07CED82C61002FAB5DE1
+10:48:28,901 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event InteractiveAuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: EEB421DB101B07CED82C61002FAB5DE1
+10:48:43,367 WARN  [http-8080-3] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationFailureBadCredentialsEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@2eb76: RemoteIpAddress: 127.0.0.1; SessionId: BA7878F07D42B41BD71A7885B054631D; exception: Bad credentials
+10:49:01,998 WARN  [http-8080-4] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationFailureConcurrentLoginEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@2eb76: RemoteIpAddress: 127.0.0.1; SessionId: BA7878F07D42B41BD71A7885B054631D; exception: Maximum sessions of {0} for this principal exceeded
+10:49:55,384 WARN  [http-8080-3] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationFailureBadCredentialsEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@2eb76: RemoteIpAddress: 127.0.0.1; SessionId: BA7878F07D42B41BD71A7885B054631D; exception: Bad credentials
+10:50:38,126 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationFailureConcurrentLoginEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@2eb76: RemoteIpAddress: 127.0.0.1; SessionId: BA7878F07D42B41BD71A7885B054631D; exception: Maximum sessions of {0} for this principal exceeded

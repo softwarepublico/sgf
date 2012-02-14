@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+	<div id="cadastro">
+
+	<h1> Relatórios de Veículo sem Retorno</h1>
+
+	<fieldset>
+	
+		<legend>Relatórios de Veículo sem Retorno</legend>
+	
+		<h:panelGroup id="searchUG" style="padding-left:25px">
+			<h:outputLabel value="Orgão" />
+			<h:selectOneMenu id="ug" value="#{relatorioBean.orgao}" requiredMessage="Informe a UG" converter="entityConverter">
+				<f:selectItem itemLabel="Todos" itemValue="" />
+	    		<t:selectItems value="#{ugBean.ugs}" var="ug" itemLabel="#{ug.descricao}" itemValue="#{ug}"/>
+				<a4j:support event="onchange" action="#{relatorioBean.populateMultas}" reRender="paginaPrincipal" />
+			</h:selectOneMenu>
+		</h:panelGroup>
+
+		<h:panelGroup>
+			<h:panelGrid  columns="2">
+				<h:outputLabel value="Data Início:" for="dataInicial">
+					<h:inputText id="dataInicial" value="#{relatorioBean.dtInicial}" required="true" requiredMessage="Informe a data inicial" styleClass="maskData" style="width:80px"/>
+				</h:outputLabel>
+				<h:message for="dataInicial" styleClass="message"/>
+			</h:panelGrid>
+
+			<h:panelGrid style="padding-left:15px"  columns="2">	
+				<h:outputLabel value="Data Fim:" for="dataFinal">
+					<h:inputText id="dataFinal" value="#{relatorioBean.dtFinal}" required="true" requiredMessage="Informe a data final" styleClass="maskData"  style="width:80px"/>
+				</h:outputLabel>
+				<h:message for="dataFinal" styleClass="message"/>
+			</h:panelGrid>
+		</h:panelGroup>
+
+		<h:commandButton action="#{relatorioBean.consultarVeiculosSemRetorno}" value="Consultar">
+			<a4j:support event="onclick" reRender="dataTable"/>
+		</h:commandButton> 
+	
+		<rich:dataTable id="dataTable" value="#{relatorioBean.entities}"  var="relatorio" rows="10" rowKeyVar="index"
+			onRowMouseOver="jQuery(this).addClass('trHover')"
+			onRowMouseOut="jQuery(this).removeClass('trHover')"
+			rowClasses="even,odd">
+	
+			<c:if test="#{relatorioBean.entitiesSize == 0}">
+				<rich:column>
+					<f:facet name="header">Nenhum registro foi encontrado.</f:facet>
+				</rich:column>
+			</c:if>
+	
+			<c:if test="#{relatorioBean.entitiesSize > 0}">
+			
+				<rich:column colspan="6">
+					<h:outputText value="Orgão: #{relatorio.orgao.descricao}"  style="font-weight: bold;"/>
+				</rich:column>
+				
+				<rich:subTable id="subDataTable" headerClass="subHeader" value="#{relatorio.relatorios}" var="r" rowKeyVar="k"
+					rowClasses="odd,even"
+					onRowMouseOver="jQuery(this).addClass('trHover')"
+					onRowMouseOut="jQuery(this).removeClass('trHover')">
+		
+					<rich:column width="2%">
+						<f:facet name="header"><h:outputLabel value="Nº"/></f:facet>
+						<h:outputText value="#{k+1}" />
+					</rich:column>
+
+					<rich:column>
+						<f:facet name="header"><h:outputLabel value="Veículo"/></f:facet>
+						<h:outputText value="#{r.manutencao.veiculo.placa} - #{r.manutencao.veiculo.modelo.descricao}"/>
+					</rich:column>
+					
+					<rich:column>
+						<f:facet name="header"><h:outputLabel value="Oficina"/></f:facet>
+						<h:outputText value="#{r.manutencao.oficina.nome}"/>
+					</rich:column>
+
+					<rich:column>
+						<f:facet name="header"><h:outputLabel value="Data/Hora Saída" /></f:facet>
+						<h:outputText value="#{r.manutencao.dataSaida}">
+							<f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
+						</h:outputText>
+					</rich:column>
+
+					<rich:column>
+						<f:facet name="header"><h:outputLabel value="Data Prev.Retorno"/></f:facet>
+						<h:outputText value="#{r.manutencao.dataFim}">
+							<f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-03:00" />
+						</h:outputText>
+					</rich:column>
+
+					<rich:column>
+						<f:facet name="header"><h:outputLabel value="Atraso" /></f:facet>
+						<h:outputText value="#{r.atraso}">
+							<f:convertDateTime pattern="dd HH:mm" timeZone="GMT-03:00"/>
+						</h:outputText>
+					</rich:column>
+
+				</rich:subTable>
+	
+			</c:if>
+	
+		</rich:dataTable>
+
+		<p/>
+		<a4j:status id="gerarRelatorio">
+			<f:facet name="start">
+				<h:panelGroup style="align:center;">
+					<h:graphicImage value="/images/ajax-loader.gif" height="16" width="16" />
+					<h:outputText value="Processando..." styleClass="processando" />
+				</h:panelGroup>
+			</f:facet>
+		</a4j:status>
+	
+		<h:panelGroup rendered="#{relatorioBean.entitiesSize > 0}">
+			<h:commandLink action="#{relatorioBean.gerarRelatorio}" value="Gerar Relatório" target="blank">
+				<a4j:support event="onclick" status="gerarRelatorio" reRender="paginaPrincipal" />
+			</h:commandLink>
+		</h:panelGroup>
+	
+	</fieldset>
+
+	</div>
+
+</ui:composition>

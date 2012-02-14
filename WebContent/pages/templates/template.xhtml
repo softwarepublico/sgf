@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jstl/core">
+    
+    <f:loadBundle basename="messages" var="msg" />
+
+	<head>
+		<title>Sistema de Gestão de Frotas - SGF</title>
+		<link rel="shortcut icon" href="http://www.fortaleza.ce.gov.br/images/favicon.ico"/>
+		<a4j:loadStyle src="../css/global.css" />
+		<a4j:loadStyle src="../css/estilo.css" />
+		<a4j:loadStyle src="../css/calendar/jquery-ui-1.7.2.custom.css"/>
+		<a4j:loadScript src="../scripts/jquery-ui-1.7.2.custom.min.js" />
+		<a4j:loadScript src="../scripts/jquery.meio.mask.js" />
+		<a4j:loadScript src="../scripts/jquery.autocomplete.js" />
+		<a4j:loadScript src="../scripts/jquery.validate.js" />
+		<a4j:loadScript src="../scripts/jquery.alphanumeric.js" />
+		<a4j:loadScript src="../scripts/senha.js" />
+	</head>
+
+	<body onload="loadMaps();"  onunload="GUnload();">
+
+		<a4j:form id="paginaPrincipal" prependId="false">
+
+			<div id="main">
+
+				<ui:include src="/pages/commons/menu.xhtml"/>
+				<ui:insert name="conteudo"/>
+				<ui:include src="/pages/commons/rodape.xhtml" />
+
+			</div>
+
+			<ui:include src="/pages/commons/jQuery.xhtml"/>
+
+		</a4j:form>
+	</body>
+</html>

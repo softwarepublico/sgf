@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/sgf">
+	<Valve className="org.apache.catalina.valves.AccessLogValve"
+		   directory="./webapps/logs"
+		   pattern="%t %h %{Referer}i %l %u %S %{User-Agent}i %U %s %r %q %A %v %p %b %I %D"
+		   prefix="sgf_access_log."
+		   suffix=".txt"
+		   fileDateFormat="yyyy-MM-dd-HH"
+		   resolveHosts="false"/>
+	<Resource 
+		name="jdbc/sgf"
+		auth="Container"
+		type="javax.sql.DataSource"
+		username="sgf"
+		password="sgf"
+		driverClassName="org.postgresql.Driver"
+		url="jdbc:postgresql://localhost:5432/sgf"/>
+</Context>
+
+

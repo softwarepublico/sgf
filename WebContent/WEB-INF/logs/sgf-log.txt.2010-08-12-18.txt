@@ -1,0 +1,1 @@
+18:00:18,125 WARN  [main] cfg.HSConfiguration (HSConfiguration.java:169) - No configuration file hibernate-spatial.cfg.xml on the classpath.

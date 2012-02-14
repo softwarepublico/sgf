@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:sec="http://www.springframework.org/security/tags"
+      xmlns:a4j="http://richfaces.org/a4j">
+      
+      <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAPK-Z1hrb_3eQsyxpzKARGBQs3LSVMt61HzfBzB7Yg3YfcfbLPxTGUGwL5dFfypUi3W0etwHmd1Kj7A"/>
+	  <script type="text/javascript">google.load("maps", "2.81");</script>
+
+      <ui:define name="contentMap">
+
+      	<div id="contentMap" class="contentMap">
+
+			<div id="mapBar" class="mapBar">
+	
+				<a4j:status id="status">
+					<f:facet name="start">
+						<h:graphicImage value="/images/ajax/ajax_process.gif" width="24px" height="24px"/>
+					</f:facet>
+				</a4j:status>
+			</div>
+			
+			<h:inputHidden id="currentVehicle" value="${monitoramentoBean.ponto.id}"/>
+	
+			<div id="map" class="map"></div>
+
+		</div>
+
+	</ui:define>
+
+</ui:composition>
+

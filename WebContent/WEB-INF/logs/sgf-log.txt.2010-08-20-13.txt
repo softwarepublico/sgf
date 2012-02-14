@@ -1,0 +1,140 @@
+13:28:08,462 WARN  [http-8080-4] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@2cd90: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 5DA4A3A399B8A04BBD8C231EF5EBF9B9
+13:28:08,474 WARN  [http-8080-4] authentication.LoggerListener (LoggerListener.java:60) - Authentication event InteractiveAuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@2cd90: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 5DA4A3A399B8A04BBD8C231EF5EBF9B9
+13:33:33,096 WARN  [http-8080-1] authorization.LoggerListener (LoggerListener.java:47) - Security interception failed due to: org.springframework.security.AuthenticationCredentialsNotFoundException: An Authentication object was not found in the SecurityContext; secure object: FilterInvocation: URL: /pages/home.jsf; configuration attributes: [ROLE_ADMIN, ROLE_CHEFE_TRANSP, ROLE_COORD_TRANSP, ROLE_CHEFE_SETOR, ROLE_OPERADOR, ROLE_USER]
+13:33:49,316 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@21a2c: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 785CD883F9DCF5FADEE922935091B73F
+13:33:49,318 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event InteractiveAuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@21a2c: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 785CD883F9DCF5FADEE922935091B73F
+13:36:37,761 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@fffe9938: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: F47A0F26BD9ABE93543B7CB6C07E27E4
+13:36:37,771 WARN  [http-8080-1] authentication.LoggerListener (LoggerListener.java:60) - Authentication event InteractiveAuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@fffe9938: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: F47A0F26BD9ABE93543B7CB6C07E27E4
+13:38:51,572 ERROR [main] context.ContextLoader (ContextLoader.java:215) - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name '_methodSecurityInterceptorPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.config.internalTransactionAdvisor': Cannot create inner bean '(inner bean)' of type [org.springframework.transaction.interceptor.TransactionInterceptor] while setting bean property 'transactionInterceptor'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager' defined in ServletContext resource [/WEB-INF/spring.xml]: Cannot resolve reference to bean 'entityManagerFactory' while setting bean property 'entityManagerFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in ServletContext resource [/WEB-INF/spring.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: sgf] Unable to build EntityManagerFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:478)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:881)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:606)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:366)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:255)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:199)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:45)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:3934)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4429)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:791)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:771)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:526)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:630)
+	at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:556)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:491)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1206)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:314)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:722)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:443)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:516)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:583)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:413)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.config.internalTransactionAdvisor': Cannot create inner bean '(inner bean)' of type [org.springframework.transaction.interceptor.TransactionInterceptor] while setting bean property 'transactionInterceptor'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager' defined in ServletContext resource [/WEB-INF/spring.xml]: Cannot resolve reference to bean 'entityManagerFactory' while setting bean property 'entityManagerFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in ServletContext resource [/WEB-INF/spring.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: sgf] Unable to build EntityManagerFactory
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:230)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:122)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1244)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1008)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:470)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:87)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:98)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:84)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:66)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:345)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:309)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1342)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:471)
+	... 38 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager' defined in ServletContext resource [/WEB-INF/spring.xml]: Cannot resolve reference to bean 'entityManagerFactory' while setting bean property 'entityManagerFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in ServletContext resource [/WEB-INF/spring.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: sgf] Unable to build EntityManagerFactory
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:275)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:104)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1244)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1008)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:470)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:219)
+	... 59 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager' defined in ServletContext resource [/WEB-INF/spring.xml]: Cannot resolve reference to bean 'entityManagerFactory' while setting bean property 'entityManagerFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in ServletContext resource [/WEB-INF/spring.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: sgf] Unable to build EntityManagerFactory
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:275)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:104)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1244)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1008)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:470)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:269)
+	... 67 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in ServletContext resource [/WEB-INF/spring.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: sgf] Unable to build EntityManagerFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:471)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:269)
+	... 80 more
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: sgf] Unable to build EntityManagerFactory
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:677)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:132)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:227)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:273)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1367)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1333)
+	... 90 more
+Caused by: org.hibernate.cache.NoCachingEnabledException: Second-level cache is not enabled for usage [hibernate.cache.use_second_level_cache | hibernate.cache.use_query_cache]
+	at org.hibernate.cache.impl.NoCachingRegionFactory.buildEntityRegion(NoCachingRegionFactory.java:66)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:255)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1327)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:854)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:669)
+	... 95 more
+13:39:47,023 WARN  [http-8080-1] authorization.LoggerListener (LoggerListener.java:47) - Security interception failed due to: org.springframework.security.AuthenticationCredentialsNotFoundException: An Authentication object was not found in the SecurityContext; secure object: FilterInvocation: URL: /pages/home.jsf; configuration attributes: [ROLE_ADMIN, ROLE_CHEFE_TRANSP, ROLE_COORD_TRANSP, ROLE_CHEFE_SETOR, ROLE_OPERADOR, ROLE_USER]
+13:39:48,616 WARN  [http-8080-1] authorization.LoggerListener (LoggerListener.java:47) - Security interception failed due to: org.springframework.security.AuthenticationCredentialsNotFoundException: An Authentication object was not found in the SecurityContext; secure object: FilterInvocation: URL: /pages/css/estilo.css; configuration attributes: [ROLE_ADMIN, ROLE_CHEFE_TRANSP, ROLE_COORD_TRANSP, ROLE_CHEFE_SETOR, ROLE_OPERADOR, ROLE_USER]
+13:39:48,621 WARN  [http-8080-2] authorization.LoggerListener (LoggerListener.java:47) - Security interception failed due to: org.springframework.security.AuthenticationCredentialsNotFoundException: An Authentication object was not found in the SecurityContext; secure object: FilterInvocation: URL: /pages/images/fortaleza-bela.gif; configuration attributes: [ROLE_ADMIN, ROLE_CHEFE_TRANSP, ROLE_COORD_TRANSP, ROLE_CHEFE_SETOR, ROLE_OPERADOR, ROLE_USER]
+13:39:48,667 WARN  [http-8080-2] authorization.LoggerListener (LoggerListener.java:47) - Security interception failed due to: org.springframework.security.AuthenticationCredentialsNotFoundException: An Authentication object was not found in the SecurityContext; secure object: FilterInvocation: URL: /pages/images/fortaleza-bela.gif; configuration attributes: [ROLE_ADMIN, ROLE_CHEFE_TRANSP, ROLE_COORD_TRANSP, ROLE_CHEFE_SETOR, ROLE_OPERADOR, ROLE_USER]
+13:39:48,670 WARN  [http-8080-3] authorization.LoggerListener (LoggerListener.java:47) - Security interception failed due to: org.springframework.security.AuthenticationCredentialsNotFoundException: An Authentication object was not found in the SecurityContext; secure object: FilterInvocation: URL: /pages/images/seguranca.jpg; configuration attributes: [ROLE_ADMIN, ROLE_CHEFE_TRANSP, ROLE_COORD_TRANSP, ROLE_CHEFE_SETOR, ROLE_OPERADOR, ROLE_USER]
+13:40:18,161 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@fffe9938: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 96C4E82FFF2C91B44C1295E5FC19D837
+13:40:18,162 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event InteractiveAuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@fffe9938: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 96C4E82FFF2C91B44C1295E5FC19D837
+13:47:46,050 WARN  [http-8080-1] authorization.LoggerListener (LoggerListener.java:47) - Security interception failed due to: org.springframework.security.AuthenticationCredentialsNotFoundException: An Authentication object was not found in the SecurityContext; secure object: FilterInvocation: URL: /pages/home.jsf; configuration attributes: [ROLE_ADMIN, ROLE_CHEFE_TRANSP, ROLE_COORD_TRANSP, ROLE_CHEFE_SETOR, ROLE_OPERADOR, ROLE_USER]
+13:47:47,597 WARN  [http-8080-1] authorization.LoggerListener (LoggerListener.java:47) - Security interception failed due to: org.springframework.security.AuthenticationCredentialsNotFoundException: An Authentication object was not found in the SecurityContext; secure object: FilterInvocation: URL: /pages/css/estilo.css; configuration attributes: [ROLE_ADMIN, ROLE_CHEFE_TRANSP, ROLE_COORD_TRANSP, ROLE_CHEFE_SETOR, ROLE_OPERADOR, ROLE_USER]
+13:47:47,606 WARN  [http-8080-3] authorization.LoggerListener (LoggerListener.java:47) - Security interception failed due to: org.springframework.security.AuthenticationCredentialsNotFoundException: An Authentication object was not found in the SecurityContext; secure object: FilterInvocation: URL: /pages/images/seguranca.jpg; configuration attributes: [ROLE_ADMIN, ROLE_CHEFE_TRANSP, ROLE_COORD_TRANSP, ROLE_CHEFE_SETOR, ROLE_OPERADOR, ROLE_USER]
+13:47:47,605 WARN  [http-8080-2] authorization.LoggerListener (LoggerListener.java:47) - Security interception failed due to: org.springframework.security.AuthenticationCredentialsNotFoundException: An Authentication object was not found in the SecurityContext; secure object: FilterInvocation: URL: /pages/images/fortaleza-bela.gif; configuration attributes: [ROLE_ADMIN, ROLE_CHEFE_TRANSP, ROLE_COORD_TRANSP, ROLE_CHEFE_SETOR, ROLE_OPERADOR, ROLE_USER]
+13:49:44,414 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event AuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@0: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 32A96F98957FEA519B8C79B18F870A92
+13:49:44,415 WARN  [http-8080-2] authentication.LoggerListener (LoggerListener.java:60) - Authentication event InteractiveAuthenticationSuccessEvent: edilson; details: org.springframework.security.ui.WebAuthenticationDetails@0: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: 32A96F98957FEA519B8C79B18F870A92

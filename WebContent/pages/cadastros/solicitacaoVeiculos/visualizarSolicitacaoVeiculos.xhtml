@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:t="http://myfaces.apache.org/tomahawk"
+    xmlns:c="http://java.sun.com/jstl/core">
+
+    <rich:modalPanel id="solicitacaoVeiculoView" domElementAttachment="form" width="700" height="300" moveable="true" top="10">
+
+    	<f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Visualização dos dados da solicitação"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+
+        <f:facet name="controls">
+            <h:panelGroup>
+            	<h:commandButton id="hidelink" action="#{solicitacaoVeiculoBean.search}" value="" image="/images/close.gif">
+                	<a4j:support event="onclick" reRender="paginaPrincipal"/>
+                </h:commandButton>
+                <rich:componentControl for="solicitacaoVeiculoView" attachTo="hidelink" operation="hide" event="onclick"/>
+            </h:panelGroup>
+        </f:facet>
+
+		<div id="cadastro">      
+
+			<h1>Solicitação de Veículos</h1>
+
+			 <fieldset>    
+
+				<legend>Dados da Solicitação do Veículo</legend>
+
+				<t:panelGrid columns="4">
+
+					<h:outputLabel value="Solicitante:" for="solicitante" styleClass="labelNegrito"/>
+					<h:outputText id="solicitante" value="#{solicitacaoVeiculoBean.entity.solicitante.pessoa.nome}"/>
+
+					<h:outputLabel value="UA:" for="uaSolicitante" styleClass="labelNegrito"/>
+					<h:outputText id="uaSolicitante" value="#{solicitacaoVeiculoBean.entity.solicitante.pessoa.ua.descricao}"/>
+
+					<h:outputLabel value="Destino:" for="destino" styleClass="labelNegrito"/>
+					<h:outputText id="destino" value="#{solicitacaoVeiculoBean.entity.destino}"/>
+
+					<c:if test="#{solicitacaoVeiculoBean.entity.status == 'AUTORIZADO'}">
+						<h:outputLabel value="Justificativa:" for="justificativa" styleClass="labelNegrito"/>
+						<h:outputText id="justificativa" value="#{solicitacaoVeiculoBean.entity.justificativa}"/>
+					</c:if>
+					
+					<c:if test="#{solicitacaoVeiculoBean.entity.status == 'NEGADO'}">
+						<h:outputLabel value="Justificativa:" for="justNegacao" styleClass="labelNegrito"/>
+						<h:outputText id="justNegacao" value="#{solicitacaoVeiculoBean.entity.justificativaNeg}"/>
+					</c:if>
+
+					<rich:separator lineType="double" styleClass="separator"/> <rich:separator lineType="double" styleClass="separator"/> 
+					<rich:separator lineType="double" styleClass="separator"/>  <rich:separator lineType="double" styleClass="separator"/>  
+
+					<h:outputLabel value="Veículo:" for="marcaModelo" styleClass="labelNegrito"/>
+				    <h:outputText id="marcaModelo" value="#{solicitacaoVeiculoBean.entity.veiculo.placa} #{solicitacaoVeiculoBean.entity.veiculo.modelo.descricao}"/>
+
+			        <h:outputLabel value="Placa:" for="placa" styleClass="labelNegrito"/>
+			        <h:outputText id="placa" value="#{solicitacaoVeiculoBean.veiculoSelecionado.placa}"/>
+
+			        <h:outputLabel value="Data Saída:" for="dtInicial" styleClass="labelNegrito"/>
+					<h:inputText id="dtInicial" value="#{solicitacaoVeiculoBean.entity.dataHoraSaida}" disabled="true" 
+						required="true" requiredMessage="Informe a data de saída" size="10">
+						<f:convertDateTime type="date" pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
+					</h:inputText>
+
+					<h:outputLabel for="dtFinal" value="Data retorno:" styleClass="labelNegrito"/>
+					<h:inputText id="dtFinal" value="#{solicitacaoVeiculoBean.entity.dataHoraRetorno}" disabled="true"
+						required="true" requiredMessage="Informe a data de retorno" size="10">
+						<f:convertDateTime type="date" pattern="dd/MM/yyyy" timeZone="GMT-03:00"/>
+					</h:inputText>
+					<br/>
+
+					<h:outputLabel value="Status" for="status" styleClass="labelNegrito"/>
+					<h:inputText id="status" value="#{solicitacaoVeiculoBean.entity.status}" disabled="true"/>
+
+				</t:panelGrid>
+
+			</fieldset>
+			
+			<h:commandButton value="Voltar" onclick="Richfaces.hideModalPanel;"  immediate="true">
+				<a4j:support event="oncomplete" reRender="paginaPrincipal"/>
+			</h:commandButton> 
+
+		</div>
+
+    </rich:modalPanel>
+
+</ui:composition>  

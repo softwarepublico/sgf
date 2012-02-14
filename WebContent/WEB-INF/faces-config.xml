@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+	<application>
+	    <message-bundle>messages</message-bundle>
+		<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+			<supported-locale>pt_BR</supported-locale>
+			<supported-locale>en_US</supported-locale>
+		</locale-config>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+	</application>
+
+	<!-- Conversores -->
+	<converter>
+		<converter-class>br.gov.ce.fortaleza.cti.sgf.conversores.TipoServicoConverter</converter-class>
+		<converter-id>tipoServicoConverter</converter-id>
+	</converter>
+	<converter>
+		<converter-class>br.gov.ce.fortaleza.cti.sgf.conversores.PostoConverter</converter-class>
+		<converter-id>postoConverter</converter-id>
+	</converter>
+	<converter>
+		<converter-class>br.gov.ce.fortaleza.cti.sgf.conversores.CombustivelConverter</converter-class>
+		<converter-id>combustivelConverter</converter-id>
+	</converter>
+	<converter>
+		<converter-class>br.gov.ce.fortaleza.cti.sgf.conversores.PostoServicoConverter</converter-class>
+		<converter-id>postoServicoConverter</converter-id>
+	</converter>
+	<converter>
+		<converter-class>br.gov.ce.fortaleza.cti.sgf.conversores.UGConverter</converter-class>
+		<converter-id>ugConverter</converter-id>
+	</converter>
+	<converter>
+		<converter-class>br.gov.ce.fortaleza.cti.sgf.conversores.UAConverter</converter-class>
+		<converter-id>uaConverter</converter-id>
+	</converter>
+	<converter>
+		<converter-class>br.gov.ce.fortaleza.cti.sgf.conversores.PermissaoConverter</converter-class>
+		<converter-id>permissaoConverter</converter-id>
+	</converter>
+	<converter>
+		<converter-class>br.gov.ce.fortaleza.cti.sgf.conversores.RoleConverter</converter-class>
+		<converter-id>roleConverter</converter-id>
+	</converter>
+	<converter>
+		<converter-class>br.gov.ce.fortaleza.cti.sgf.conversores.EntityConverter</converter-class>
+		<converter-id>entityConverter</converter-id>
+	</converter>
+	<converter>
+		<converter-class>br.gov.ce.fortaleza.cti.sgf.conversores.ValorConverter</converter-class>
+		<converter-id>valorConverter</converter-id>
+	</converter>
+	
+	<!-- Validadores -->
+	<validator>
+		<validator-id>bombaValidador</validator-id>
+		<validator-class>br.gov.ce.fortaleza.cti.sgf.validadores.BombaValidador</validator-class>
+	</validator>
+</faces-config>

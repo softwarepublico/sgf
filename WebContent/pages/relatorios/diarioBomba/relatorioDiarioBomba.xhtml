@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+	<div id="cadastro">
+
+		<h1>Relatório</h1>
+
+		<fieldset class="medio">
+
+	      	<legend>Relatório Diário de Bomba de Combustível</legend>
+
+	      	<dl>
+	      		<a4j:region>
+
+		        	<dt><label for="dtInicialRelDiarioBomba">Data inicial</label></dt>
+		        	<dd>
+		        		<h:inputText value="#{relatorioBean.dtInicial}" id="dtInicialRelDiarioBomba" 
+		        			required="true" requiredMessage="Informe a data inicial" styleClass="maskData">
+		        			<f:convertDateTime type="date" dateStyle="short" timeZone="GMT-03:00" pattern="dd/MM/yyyy" />
+		        		</h:inputText>
+		        		<h:message for="dtInicialRelDiarioBomba" styleClass="message"/>
+		        	</dd>
+
+		           	<dt><label for="dtFinalRelDiairioBomba">Data final</label></dt>
+		        	<dd>
+		        		<h:inputText value="#{relatorioBean.dtFinal}" id="dtFinalRelDiairioBomba" 
+		        			required="true" requiredMessage="Informe a data final" styleClass="maskData">
+		        			<f:convertDateTime type="date" dateStyle="short" timeZone="GMT-03:00" pattern="dd/MM/yyyy" />
+		        		</h:inputText>
+		        		<h:message for="dtFinalRelDiairioBomba" styleClass="message"/>
+		        	</dd>
+
+		        	<dt><label for="posto">Posto</label></dt>
+				  	<dd>
+				  		<h:selectOneMenu id="posto" value="#{relatorioBean.posto}" converter="entityConverter">
+				  			<f:selectItem itemValue="" itemLabel="Selecione o Posto"/>
+				  			<t:selectItems value="#{postoBean.postos}" var="posto" itemLabel="#{posto.descricao}" itemValue="#{posto}"/>
+				  		</h:selectOneMenu>
+				  		<h:message for="posto" styleClass="messages"/>
+
+				  		<h:panelGroup>
+				    		<a4j:commandButton action="#{relatorioBean.consultarDiarios}" value="Consultar" style="margin-left:30px"
+				    			status="loadingDiarios" reRender="paginaPrincipal">
+							</a4j:commandButton>
+
+							<a4j:status id="loadingDiarios">
+				    			<f:facet name="start">
+				    				<h:panelGroup style="align:center;">
+				    					<h:graphicImage value="/images/ajax-loader.gif" height="16" width="16" />
+					    				<h:outputText value="Processando..." styleClass="processando"/>
+									</h:panelGroup>
+								</f:facet>
+				    		</a4j:status>
+		    			</h:panelGroup>
+				  	</dd>
+
+	    		</a4j:region>
+	        </dl>
+
+	        <rich:dataTable id="dataTable" var="relatorio" value="#{relatorioBean.entities}" rowKeyVar="index" rows="10" 
+	        	rendered="#{not empty relatorioBean.entities}"
+	        	rowClasses="even,odd"
+	        	onRowMouseOver="jQuery(this).addClass('trHover')" 
+				onRowMouseOut="jQuery(this).removeClass('trHover')">
+
+					<rich:column colspan="10" style="font-weight: bold; background:white">
+						<h:outputText value="Posto: #{relatorio.posto.descricao}" />
+						<h:outputText value="Consumo Posto: #{relatorio.consumoPosto}" style="padding-left:30px">
+							<f:convertNumber type="number" maxFractionDigits="2" minFractionDigits="2" pattern="###0"/>
+						</h:outputText>
+					</rich:column>
+
+
+					<rich:subTable id="subDataTable" value="#{relatorio.posto.diarioBombas}" var="db" rowKeyVar="k"
+						headerClass="subHeader" 
+						rowClasses="odd,even">
+
+							<rich:column width="3%" style="text-align: center;" > 
+								<f:facet name="header"><h:outputText value="Nº" /></f:facet>
+								<h:outputText value="#{k+1}" style="color: black;"/>
+							</rich:column>
+
+							<rich:column width="5%">
+								<f:facet name="header"><h:outputLabel value="Bomba Nº"/></f:facet>
+								<h:outputText value="#{db.bomba.numero}"/>
+							</rich:column>
+
+							<rich:column width="10%">
+								<f:facet name="header"><h:outputLabel value="Hora abertura"/></f:facet>
+								<h:outputText value="#{db.horaInicial}">
+									<f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
+								</h:outputText>
+							</rich:column>				
+
+							<rich:column width="10%">
+								<f:facet name="header">
+									<h:outputLabel value="Hora fechamento"/>
+								</f:facet>
+								<h:outputText value="#{db.horaFinal}">
+									<f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
+								</h:outputText>
+							</rich:column>
+							
+							<rich:column width="10%">
+								<f:facet name="header"><h:outputLabel value="Valor inicial"/></f:facet>
+								<h:outputText value="#{db.vlrInicial}">
+									<f:convertNumber type="number" maxFractionDigits="2" minFractionDigits="2" pattern="###0"/>
+								</h:outputText>
+							</rich:column>
+
+							<rich:column width="10%">
+								<f:facet name="header"><h:outputLabel value="Valor final"/></f:facet>
+								<h:outputText value="#{db.vlrFinal}">
+									<f:convertNumber type="number" maxFractionDigits="2" minFractionDigits="2" pattern="###0"/>
+								</h:outputText>
+							</rich:column>
+
+							<rich:column width="10%">
+								<f:facet name="header"><h:outputLabel value="Litros/Dia"/></f:facet>
+								<h:outputText value="#{db.litrosAbastecidos}" styleClass="align:right">
+									<f:convertNumber type="number" maxFractionDigits="2" minFractionDigits="2" pattern="###0"/>
+								</h:outputText>
+							</rich:column>
+
+							<rich:column width="10%">
+								<f:facet name="header"><h:outputLabel value="Data"/></f:facet>
+								<h:outputText value="#{db.dtDia}"/>
+							</rich:column>
+
+							<f:facet name="footer">
+								<rich:datascroller for="subDataTable"  renderIfSinglePage="true" ajaxSingle="true" reRender="subDataTable"/>
+				            </f:facet>
+
+			    	</rich:subTable>
+
+			</rich:dataTable>
+			<p/>
+
+				<h:panelGroup rendered="#{not empty relatorioBean.entities}">
+
+					<h:commandLink action="#{relatorioBean.gerarRelatorio}" value="Gerar Relatório" target="blank">
+		    			<a4j:support event="onclick" status="gerarRelatorio" reRender="paginaPrincipal"/>
+					</h:commandLink>
+
+					<a4j:status id="gerarRelatorio">
+		    			<f:facet name="start">
+		    				<h:panelGroup style="align:center;">
+		    					<h:graphicImage value="/images/ajax-loader.gif" height="16" width="16" />
+			    				<h:outputText value="Processando..." styleClass="processando"/>
+							</h:panelGroup>
+						</f:facet>
+		    		</a4j:status>
+
+	    		</h:panelGroup>
+
+	    </fieldset> 
+
+	</div>
+
+</ui:composition>
